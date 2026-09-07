@@ -37,13 +37,15 @@ Was able to create this error by disabling any books from querying by adding the
 Essentially this error told me that it was unable to find the test database it created as part of my code essentially omitted all of the books from querying.
 
 Question 1: 
-    Question: Your models use two foreign keys. Pick one of them. Name which model carries the ForeignKey and which model it points at, and explain why you arranged it that way. What would be different about the data you entered if you had reversed it?
-    Answer: One of the relationships I had was the Book carrying the ForeignKey that pointed to the Publisher. The reason for this is because of their cardinalities, a publisher can have many books, but a book can only have one publisher exactly.
-    If I was to reverse the cardinality it could potentially duplicate the publisher, as a publisher can have one or many books, and a book can have exactly one publisher, a flipped version of this could mean that multiple of the exact same publisher
-    exist one per book. Meaning if we were to need to know how many books a publisher had we would have to count every matching row of publishers.
-\n
+Question: Your models use two foreign keys. Pick one of them. Name which model carries the ForeignKey and which model it points at, and explain why you arranged it that way. What would be different about the data you entered if you had reversed it?
+
+Answer: One of the relationships I had was the Book carrying the ForeignKey that pointed to the Publisher. The reason for this is because of their cardinalities, a publisher can have many books, but a book can only have one publisher exactly.
+If I was to reverse the cardinality it could potentially duplicate the publisher, as a publisher can have one or many books, and a book can have exactly one publisher, a flipped version of this could mean that multiple of the exact same publisher
+exist one per book. Meaning if we were to need to know how many books a publisher had we would have to count every matching row of publishers.
+
 Question 2:
-    Question: You added one field of your own to Book. Which field type did you choose, and why that type rather than another? What would you lose if you had stored the same fact as a CharField?
-    Answer: The additional field I included was the publication_year as an IntegerField. I chose this because publication year is numeric in nature and allows us to further compare and order our database. Other data types would either be uneccesary or misleading.
-    If I stored it as a CharField it would loose its sorting purpose. CharField sorts based on the string values not numbers so I would have to make additional complicated logic to have it work properly with numbers or some other data type.
+Question: You added one field of your own to Book. Which field type did you choose, and why that type rather than another? What would you lose if you had stored the same fact as a CharField?
+
+Answer: The additional field I included was the publication_year as an IntegerField. I chose this because publication year is numeric in nature and allows us to further compare and order our database. Other data types would either be uneccesary or misleading.
+If I stored it as a CharField it would loose its sorting purpose. CharField sorts based on the string values not numbers so I would have to make additional complicated logic to have it work properly with numbers or some other data type.
 
