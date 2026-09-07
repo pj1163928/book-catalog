@@ -41,6 +41,7 @@ Question 1:
     Answer: One of the relationships I had was the Book carrying the ForeignKey that pointed to the Publisher. The reason for this is because of their cardinalities, a publisher can have many books, but a book can only have one publisher exactly.
     If I was to reverse the cardinality it could potentially duplicate the publisher, as a publisher can have one or many books, and a book can have exactly one publisher, a flipped version of this could mean that multiple of the exact same publisher
     exist one per book. Meaning if we were to need to know how many books a publisher had we would have to count every matching row of publishers.
+\n
 Question 2:
     Question: You added one field of your own to Book. Which field type did you choose, and why that type rather than another? What would you lose if you had stored the same fact as a CharField?
     Answer: The additional field I included was the publication_year as an IntegerField. I chose this because publication year is numeric in nature and allows us to further compare and order our database. Other data types would either be uneccesary or misleading.
