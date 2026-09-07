@@ -1,0 +1,8 @@
+<h1>Reviews</h1>
+{% for review in reviews %}
+    <div>
+        <p>{{ review.body }}</p>
+        <p>Book: {{ review.book.title }}</p>
+        <p>Publisher: {{ review.book.publisher.name }}</p>
+    </div>
+{% endfor %}
