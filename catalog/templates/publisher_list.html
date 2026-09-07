@@ -1,11 +1,17 @@
-<h1>Publishers</h1>
-{% for publisher in publishers %}
+{% extends "base.html" %}
+
+{% block title %}Publishers{% endblock %}
+
+{% block content %}
+  <h1>Publishers</h1>
+  {% for publisher in publishers %}
     <div>
-        <h3>{{ publisher.name }}</h3>
-        <ul>
-            {% for book in publisher.books.all %}
-                <li>{{ book.title }}</li>
-            {% endfor %}
-        </ul>
+      <h3>{{ publisher.name }}</h3>
+      <ul>
+        {% for book in publisher.books.all %}
+          <li>{{ book.title }}</li>
+        {% endfor %}
+      </ul>
     </div>
-{% endfor %}
+  {% endfor %}
+{% endblock %}

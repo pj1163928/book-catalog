@@ -1,3 +1,8 @@
+{% extends "base.html" %}
+
+{% block title %}Reviews{% endblock %}
+
+{% block content %}
 <h1>Reviews</h1>
 {% for review in reviews %}
     <div>
@@ -6,3 +11,4 @@
         <p>Publisher: {{ review.book.publisher.name }}</p>
     </div>
 {% endfor %}
+{% endblock %}
